@@ -1,0 +1,45 @@
+int en = 8;
+int dir =5;
+int stp = 2;
+int ref = 13;
+
+void setup() {
+  // put your setup code here, to run once:
+pinMode (en,OUTPUT);
+pinMode (dir,OUTPUT);
+pinMode (stp,OUTPUT);
+pinMode (ref,OUTPUT);
+digitalWrite (en, HIGH);
+digitalWrite (dir,HIGH);
+digitalWrite (ref,HIGH);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+digitalWrite(dir, !digitalRead(dir));
+int i = 3000;
+int j=1;
+for (i; i>1000; i--)
+{
+digitalWrite(stp , HIGH);
+delayMicroseconds (1);
+digitalWrite(stp , LOW);
+delayMicroseconds (i);
+}
+for(j; j<1000; j++)
+{
+  digitalWrite(stp , HIGH);
+delayMicroseconds (1);
+digitalWrite(stp , LOW);
+delayMicroseconds (i);
+  }
+for (i; i<6000; i++)
+{
+digitalWrite(stp , HIGH);
+delayMicroseconds (1);
+digitalWrite(stp , LOW);
+delayMicroseconds (i);
+}
+delay(3000);
+j=1;
+}
